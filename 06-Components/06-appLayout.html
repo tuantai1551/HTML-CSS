@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>App layout</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: sans-serif;
+        color: #343a40;
+        line-height: 1;
+      }
+      .app-layout {
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 80px 400px auto 250px;
+        grid-template-rows: 80px auto;
+      }
+      nav {
+        grid-row: 1 / -1;
+        background-color: #343a40;
+        color: #fff;
+        font-size: 24px;
+        padding-top: 24px;
+        font-weight: 700;
+        text-align: center;
+      }
+      menu {
+        background-color: #7048e8;
+        grid-column: 2 / -1;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 40px;
+      }
+      section {
+        background-color: #e9ecef;
+        display: flex;
+        flex-direction: column;
+        padding: 40px;
+        gap: 40px;
+        overflow: scroll;
+      }
+      main,
+      aside {
+        font-size: 24px;
+        padding-top: 24px;
+        text-align: center;
+        font-weight: 700;
+      }
+      aside {
+        background-color: #e9ecef;
+      }
+      .list-item {
+        display: flex;
+        gap: 12px;
+      }
+      .btn {
+        color: #fff;
+        padding: 8px 12px;
+        background-color: #5f3dc4;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      .trash {
+        padding: 8px 12px;
+        background-color: #d6336c;
+      }
+      .btn-email {
+        color: rgb(52, 58, 64);
+        background-color: #adb5bd;
+        border: none;
+        font-size: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 96px;
+        flex-shrink: 0;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      .btn-email:hover {
+        background-color: rgb(157, 158, 160);
+      }
+      .email-content {
+        margin-top: 32px;
+        text-align: left;
+        line-height: 1.6;
+        margin-left: 48px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="app-layout">
+      <nav>Nav</nav>
+      <menu>
+        <div class="list-item">
+          <button class="btn item">New</button>
+          <button class="btn item">Reply</button>
+          <button class="btn item">Forward</button>
+          <button class="btn item">Mark unread</button>
+        </div>
+
+        <button class="btn trash">Trash</button>
+      </menu>
+      <section>
+        <button class="btn-email">Email 1</button>
+        <button class="btn-email">Email 2</button>
+        <button class="btn-email">Email 3</button>
+        <button class="btn-email">Email 4</button>
+        <button class="btn-email">Email 5</button>
+        <button class="btn-email">Email 6</button>
+        <button class="btn-email">Email 7</button>
+        <button class="btn-email">Email 8</button>
+        <button class="btn-email">Email 9</button>
+        <button class="btn-email">Email 10</button>
+      </section>
+      <main>
+        Email view
+        <div class="email-content">No content</div>
+      </main>
+      <aside>Additional info</aside>
+    </div>
+    <script>
+      const btnEmail = document.querySelectorAll(".btn-email");
+      const contentEmail = document.querySelector(".email-content");
+
+      for (let i = 0; i < btnEmail.length; ++i) {
+        btnEmail[i].addEventListener("click", function () {
+          contentEmail.innerHTML = `Đây là nội dung của email ${i + 1}.`;
+        });
+      }
+    </script>
+  </body>
+</html>
