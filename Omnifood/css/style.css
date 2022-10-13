@@ -2,6 +2,9 @@
 Resourse Images for things: unsplash.com
 Resourse Images for people' faces: uifaces.co
 
+Line height:
+ - Paragraph default: 1.6
+ - Small: 1.05
 Color:
 - Primary: #e67e22
 - Tints: #fdf2e9
@@ -9,7 +12,12 @@ Color:
 - Ascents:
 - Greys: 
 
+Letter spacing:
+- -0.5px
+- 0.75px
 
+-----------------How-to-work
++ When we build section-how-to-work, about the image, we need to add 2 round behind the image, so it could be better.
  */
 * {
   padding: 0;
@@ -27,50 +35,39 @@ body {
   position: absolute;
   min-width: 100%;
 }
-header {
+.main-header {
   background-color: #fdf2e9;
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 4.8rem;
+  /* We want header to be sticky */
   height: 9.6rem;
 }
 
-/* Helper class */
-.margin-right-sm{
+/* General components */
+.margin-right-sm {
   margin-right: 1.6rem !important;
 }
 
-
-/* header */
-.main-nav {
-  font-size: 1.8rem;
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
 }
-.logo-nav {
-  height: 2.2rem;
-  cursor: pointer;
+.grid {
+  display: grid;
+  gap: 9.6rem;
 }
-.main-nav ul {
-  list-style-type: none;
-  display: flex;
-  align-items: center;
-  gap: 4.8rem;
-  font-weight: 500;
-}
-.main-nav ul li {
-  display: inline-block;
-}
-.main-nav-link:link,
-.main-nav-link:visited {
-  text-decoration: none;
-  color: #333;
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
 }
 
-.main-nav-link:hover,
-.main-nav-link:active {
-  color: #e67e22;
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
 }
+
 .btn:link,
 .btn:visited {
   border: none;
@@ -78,13 +75,70 @@ header {
   display: inline-block;
   border-radius: 9px;
   font-size: 1.8rem;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 18px;
   text-decoration: none;
   cursor: pointer;
   /* put transition in original button */
   transition: all 1s;
 }
+
+.heading-primary,
+.heading-secd {
+  color: #45260a;
+  letter-spacing: -0.5px;
+  font-weight: 700;
+}
+
+.heading-primary {
+  font-size: 5.2rem;
+  margin-bottom: 3.2rem;
+  line-height: 1.05;
+}
+.heading-secd {
+  font-size: 4.4rem;
+  line-height: 1.2;
+  margin-bottom: 9.6rem;
+}
+
+.heading-tertiary {
+  font-size: 3rem;
+  margin-bottom: 3.2rem;
+  color: #333;
+}
+
+/* HEADER */
+.main-nav {
+  font-size: 1.8rem;
+}
+.logo-nav {
+  height: 2.2rem;
+  cursor: pointer;
+}
+
+/* Navigation */
+.main-nav-list {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 4.8rem;
+}
+
+.main-nav-link:link,
+.main-nav-link:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  /* Add transition when we hover it */
+  transition: all 1s;
+}
+
+.main-nav-link:hover,
+.main-nav-link:active {
+  color: #e67e22;
+}
+
 .btn-nav:link,
 .btn-nav:visited {
   padding: 1.2rem 2.4rem;
@@ -95,7 +149,7 @@ header {
   background-color: #cf711f;
 }
 
-/* hero */
+/* HERO */
 
 section {
   font-size: 7rem;
@@ -115,20 +169,13 @@ section {
 .hero-text {
   flex: 1 1 100%;
 }
-.heading-primary {
-  color: #333;
-  font-size: 5.2rem;
-  margin-bottom: 3.2rem;
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.5px;
-}
+
 .hero-description {
   font-size: 2rem;
   margin-bottom: 4.8rem;
   line-height: 1.6;
 }
-.hero-btns{
+.hero-btns {
   display: flex;
   align-items: flex-start;
 }
@@ -170,6 +217,7 @@ section {
   padding: 1.6rem 3.2rem;
   color: #fff;
   font-size: 2rem;
+  font-weight: 600;
 }
 .btn-more:link,
 .btn-more:visited {
@@ -177,10 +225,94 @@ section {
   color: #555;
   padding: 1.6rem 3.2rem;
   font-size: 2rem;
+  font-weight: 600;
 }
 .btn-more:hover,
 .btn-more:active {
   background-color: #fdf2e9;
   /* Trick to add border to button when we hover it, use "box-shadow" */
   box-shadow: inset 0 0 0 3px #fff;
+}
+
+/* Featured-in */
+.section-featured {
+  padding: 4.8rem 0;
+}
+.heading-featured-in {
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.75px;
+  text-align: center;
+  margin-bottom: 2.4rem;
+  color: #888;
+  text-transform: uppercase;
+}
+.list-img-featured {
+  display: flex;
+  justify-content: space-around;
+}
+.img-featured {
+  height: 3.2rem;
+  opacity: 0.5;
+  filter: brightness(0);
+}
+
+/* How it works */
+.section-how-to-work {
+  padding: 9.6rem 0;
+}
+.title-how {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  color: #cf711f;
+  font-weight: 500;
+  letter-spacing: 0.75px;
+  margin-bottom: 1.6rem;
+}
+
+.step-text-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.step-number {
+  font-size: 8.6rem;
+  color: #ddd;
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+}
+
+.step-description {
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
+.step-img-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.step-img {
+  width: 35%;
+}
+/* background image */
+.step-img-box::before,
+.step-img-box::after {
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+}
+.step-img-box::before{
+  z-index: -2;
+  background-color: #fdf2e9;
+  width: 60%;
+  /* 60% of parent's element width */
+  /* Can't use the height because the width isn't defined */
+  padding-bottom: 60%;
+}
+.step-img-box::after{
+  z-index: -1;
+  background-color: #fae5d3;
+  width: 45%;
+  padding-bottom: 45%;
 }
