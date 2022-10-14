@@ -19,95 +19,18 @@ Letter spacing:
 -----------------How-to-work
 + When we build section-how-to-work, about the image, we need to add 2 round behind the image, so it could be better.
  */
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-html {
-  font-size: 62.5%;
-}
-body {
-  font-family: "Rubik", sans-serif;
-  line-height: 1;
-  font-weight: 400;
-  color: #555;
-  position: absolute;
-  min-width: 100%;
-}
-.main-header {
-  background-color: #fdf2e9;
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 4.8rem;
-  /* We want header to be sticky */
-  height: 9.6rem;
-}
-
-/* General components */
-.margin-right-sm {
-  margin-right: 1.6rem !important;
-}
-
-.container {
-  max-width: 120rem;
-  margin: 0 auto;
-  padding: 0 3.2rem;
-}
-.grid {
-  display: grid;
-  gap: 9.6rem;
-}
-.grid--2-cols {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.grid--3-cols {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.btn:link,
-.btn:visited {
-  border: none;
-  background-color: #e67e22;
-  display: inline-block;
-  border-radius: 9px;
-  font-size: 1.8rem;
-  font-weight: 500;
-  line-height: 18px;
-  text-decoration: none;
-  cursor: pointer;
-  /* put transition in original button */
-  transition: all 1s;
-}
-
-.heading-primary,
-.heading-secd {
-  color: #45260a;
-  letter-spacing: -0.5px;
-  font-weight: 700;
-}
-
-.heading-primary {
-  font-size: 5.2rem;
-  margin-bottom: 3.2rem;
-  line-height: 1.05;
-}
-.heading-secd {
-  font-size: 4.4rem;
-  line-height: 1.2;
-  margin-bottom: 9.6rem;
-}
-
-.heading-tertiary {
-  font-size: 3rem;
-  margin-bottom: 3.2rem;
-  color: #333;
-}
-
-/* HEADER */
+ 
+ /* HEADER */
+ .main-header {
+   background-color: #fdf2e9;
+   position: relative;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0 4.8rem;
+   /* We want header to be sticky */
+   height: 9.6rem;
+ }
 .main-nav {
   font-size: 1.8rem;
 }
@@ -149,11 +72,11 @@ body {
   background-color: #cf711f;
 }
 
+
+
 /* HERO */
 
-section {
-  font-size: 7rem;
-}
+
 .section-hero {
   background-color: #fdf2e9;
   padding: 4.8rem 0 9.6rem 0;
@@ -261,14 +184,7 @@ section {
 .section-how-to-work {
   padding: 9.6rem 0;
 }
-.title-how {
-  font-size: 1.6rem;
-  text-transform: uppercase;
-  color: #cf711f;
-  font-weight: 500;
-  letter-spacing: 0.75px;
-  margin-bottom: 1.6rem;
-}
+
 
 .step-text-box {
   display: flex;
@@ -302,7 +218,7 @@ section {
   content: "";
   border-radius: 50%;
 }
-.step-img-box::before{
+.step-img-box::before {
   z-index: -2;
   background-color: #fdf2e9;
   width: 60%;
@@ -310,9 +226,110 @@ section {
   /* Can't use the height because the width isn't defined */
   padding-bottom: 60%;
 }
-.step-img-box::after{
+.step-img-box::after {
   z-index: -1;
   background-color: #fae5d3;
   width: 45%;
   padding-bottom: 45%;
 }
+
+/* Meals */
+.section-meal {
+  padding: 9.6rem 0;
+}
+.section-meal .container:last-child {
+  margin-top: 4.8rem;
+}
+.meal {
+  box-shadow: 0 2.4rem 4.8rem rgb(0, 0, 0, 0.1);
+  border-radius: 12px;
+  /* What overflows this container should be hidden */
+  overflow: hidden;
+  transition: all 1s;
+}
+.meal:hover{
+  transform: translateY(-1.5rem);
+  box-shadow: 0 3.2rem 6.4rem rgb(0, 0, 0, 0.08);
+}
+.meal-img {
+  width: 100%;
+}
+.meal-content {
+  padding: 4rem;
+}
+.meal-tag {
+  padding: 0.4rem 0.8rem;
+  display: inline-block;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: #333;
+  border-radius: 100px;
+  font-weight: 600;
+}
+.meal-tags {
+  margin-bottom: 1.2rem;
+  display: flex;
+  gap: 1rem;
+}
+.vegetarian {
+  background-color: #51cf66;
+}
+.vegan {
+  background-color: #94d82d;
+}
+.paleo {
+  background-color: #ffd43b;
+}
+.meal-title {
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin-bottom: 3.2rem;
+  color: #333;
+}
+.meal-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+  color: #e67e22;
+}
+
+.meal-content .meal-attributes:last-child {
+  margin-bottom: 0;
+}
+.meal-attributes {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.meal-attribute {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  font-size: 1.8rem;
+}
+
+.diets {
+}
+.list-diet {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  font-size: 1.8rem;
+}
+.diet-icon{
+  height: 3rem;
+  width: 3rem;
+  color: #e67e22;
+}
+.diet {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  line-height: 3.2rem;
+}
+
+.see-recipes{
+  font-size: 1.8rem;
+}
+
