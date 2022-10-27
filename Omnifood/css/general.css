@@ -29,7 +29,8 @@ section {
 }
 .grid {
   display: grid;
-  gap: 9.6rem;
+  row-gap: 9.6rem;
+  column-gap: 6.4rem;
 }
 .grid--2-cols {
   grid-template-columns: repeat(2, 1fr);
@@ -38,23 +39,14 @@ section {
 .grid--3-cols {
   grid-template-columns: repeat(3, 1fr);
 }
+.grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+.grid-footer {
+  grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr;
+}
 .center {
   text-align: center;
-}
-
-.btn:link,
-.btn:visited {
-  border: none;
-  background-color: #e67e22;
-  display: inline-block;
-  border-radius: 9px;
-  font-size: 1.8rem;
-  font-weight: 500;
-  line-height: 18px;
-  text-decoration: none;
-  cursor: pointer;
-  /* put transition in original button */
-  transition: all 1s;
 }
 
 .heading-primary,
@@ -106,3 +98,35 @@ section {
 strong {
   font-weight: 500;
 }
+
+.icon-24 {
+  height: 2.4rem;
+  width: 2.4rem;
+  color: #e67e22;
+}
+.icon-30 {
+  height: 3rem;
+  width: 3rem;
+  color: #e67e22;
+}
+.pricing-plan {
+  border-radius: 11px;
+  width: 75%;
+  box-shadow: 0 3.2rem 4rem rgb(0 0 0 / 10%);
+}
+
+.list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  font-size: 1.8rem;
+}
+.item {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  line-height: 3.2rem;
+}
+
+/* Footer */
