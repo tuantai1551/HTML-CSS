@@ -4,8 +4,15 @@
   margin: 0;
   box-sizing: border-box;
 }
+*:focus{
+  outline: none;
+  box-shadow: 0 0 0  0.8rem #ccc;
+}
 html {
+  /* 10 / 16 = 0.625 */
   font-size: 62.5%;
+  overflow-x: hidden;
+  /* scroll-behavior: smooth; */
 }
 body {
   font-family: "Rubik", sans-serif;
@@ -14,9 +21,24 @@ body {
   color: #555;
   position: absolute;
   min-width: 100%;
+  overflow-x: hidden;
 }
 section {
   display: block;
+}
+.btn,
+.btn:link,
+.btn:visited {
+  border: none;
+  display: inline-block;
+  border-radius: 9px;
+  font-size: 2rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  /* put transition in original button */
+  transition: all 0.4s;
+  font-family: inherit;
 }
 .margin-right-sm {
   margin-right: 1.6rem !important;

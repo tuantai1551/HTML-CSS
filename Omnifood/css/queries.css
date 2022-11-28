@@ -1,0 +1,272 @@
+/* rem and em do not depend on html font-size in media queries!. Instead, 1rem = 1em = 16px */
+
+/* Below: 1344px (smaller desktops) (dưới hoặc bằng 1344)*/
+@media (max-width: 84em) {
+  /* Section-hero */
+  .hero {
+    max-width: 120rem;
+  }
+  .heading-primary {
+    font-size: 4.4rem;
+  }
+
+  /* Gallery */
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* Below: 1200px (1200 / 16) (smaller desktops) (dưới hoặc bằng 1200)*/
+@media (max-width: 75em) {
+  html {
+    /*9 / 16 = 0.5625 */
+    font-size: 56.25%;
+  }
+  /* 1rem = 10px */
+  .heading-secd {
+    font-size: 3.6rem;
+  }
+  .heading-tertiary {
+    font-size: 2.4rem;
+  }
+  .grid {
+    column-gap: 4.8rem;
+    row-gap: 6.4rem;
+  }
+  .main-header {
+    padding: 0 3.2rem;
+  }
+  .hero {
+    gap: 4.8rem;
+  }
+  .main-nav-list {
+    gap: 3.2rem;
+  }
+  .testimonials-content {
+    padding: 9.6rem 3.2rem;
+  }
+}
+/* Below: 928px (928 / 16) (Tablets) (dưới hoặc bẳng 928)*/
+@media (max-width: 58em) {
+  /* Navigation */
+  body {
+  }
+  /* Khi ở màn hình mobile thì sẽ hiện nút list và ẩn thanh main-nav */
+  .btn-mobile-nav {
+    display: block;
+    z-index: 9999;
+  }
+  .icon-mobile-nav[name="list-outline"] {
+    display: block;
+  }
+  .icon-mobile-nav[name="close-outline"] {
+    display: none;
+  }
+  .main-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.98);
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+    transform: translateX(100%);
+
+    /* How we can hidden element without using display: none */
+
+    /* 1) Hide it visually */
+    opacity: 0;
+    /* 2) Make it unaccessible to mouse and keyboard */
+    pointer-events: none;
+    /* 3) Hide it from screen readers */
+    visibility: hidden;
+  }
+  /* When we open the navigation, we need to set back to normal */
+  .nav-open .main-nav {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0); /*move back to the middle position*/
+  }
+
+  /* When we open the navigation, we would hidden list-outline and see close-outline */
+  .nav-open .icon-mobile-nav[name="list-outline"] {
+    display: none;
+  }
+  .nav-open .icon-mobile-nav[name="close-outline"] {
+    display: block;
+  }
+
+  .main-nav-list {
+    flex-direction: column;
+    gap: 4rem;
+  }
+  .main-nav-link:link,
+  .main-nav-link:visited,
+  .btn-nav:link,
+  .btn:visited {
+    font-size: 3rem;
+  }
+  html {
+    /* 8/16 = 0.5 */
+    font-size: 50%;
+  }
+  /* Section-hero */
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 0 8rem;
+    gap: 6.4rem;
+  }
+  .hero-text-box,
+  .hero-img-box {
+    text-align: center;
+  }
+
+  .hero-img {
+    width: 50%;
+  }
+  .delivered-meals {
+    justify-content: center;
+    margin-top: 3.2rem;
+  }
+
+  /* Section-featured */
+  .img-featured {
+    height: 2.4rem;
+  }
+
+  /* Section how-to-work */
+  .step-number {
+    font-size: 7.4rem;
+  }
+  /* Section-meal */
+  .meal-content {
+    padding: 2.4rem 3.2rem 3.2rem 3.2rem;
+  }
+  /* Section - testimonials */
+  .section-testimonial {
+    grid-template-columns: 1fr;
+  }
+  .gallery {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  /* Section - call-to */
+  .call-to {
+    grid-template-columns: 3fr 2fr;
+  }
+  .call-to-section-forms {
+    grid-template-columns: 1fr;
+  }
+  .btn-form {
+    margin-top: 1.2rem;
+  }
+}
+/* Below: 704px (704 / 16) (Smaller Tablets) (dưới hoặc bằng 704) */
+@media (max-width: 44em) {
+  /* Div nào được chia thành 3 hoặc 4 cột thì giảm còn 2 cột */
+  .grid--3-cols,
+  .grid--4-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .diets {
+    justify-self: center;
+    grid-column: 1 / -1;
+  }
+  .heading-secd {
+    margin-bottom: 4.8rem;
+  }
+  .pricing-plan {
+    width: 100%;
+  }
+
+  /* Footer chuyển thành hàng đầu 3 cột và hàng 2 2 cột */
+  /* Hàng đầu mỗi phần tử chiếm 2 cột */
+  /* Hàng thứ 2 mỗi phần tử chiếm 3 cột */
+  .grid-footer {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .nav-col {
+    grid-row: 1;
+    grid-column: span 2;
+    margin-bottom: 3.2rem;
+  }
+  .logo-col,
+  .address-col {
+    grid-column: span 3;
+  }
+}
+/* Below: 544px (544 / 16) (Phone) (dưới hoặc bằng 544) */
+@media (max-width: 34em) {
+  .grid{
+    row-gap: 4.8rem;
+  }
+
+  /* Hero */
+  .section-hero{
+    padding: 2.4rem 0 4.8rem 0;
+  }
+  .hero{
+    padding: 0 3.2rem;
+  }
+
+  .hero-img{
+    width: 80%;
+  }
+
+  /* Section featured-in */
+  .img-featured {
+    height: 1.2rem;
+  }
+  .section-featured{
+    padding: 4.8rem 0 1.2rem 0;
+  }
+  .grid--2-cols,
+  .grid--3-cols,
+  .grid--4-cols,
+  .testimonials {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  /* Chọn tấm hình là con thứ 2 của class container (là class đầu tiên có tên là step-img-box) (order of the child in the container) */
+  .step-img-box:nth-child(2) {
+    grid-row: 1;
+  }
+
+    /* Chọn tấm hình là con thứ 6 của class container (là class thứ 3 có tên là step-img-box) (order of the child in the container) */
+  .step-img-box:nth-child(6) {
+    grid-row: 5;
+  }
+
+  /* Di chuyển để hình và text di chung với nhau dễ đọc hơn */
+  .step-img-box{
+    transform: translateY(3rem);
+  }
+
+
+  /* Section-testimonials */
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+  }
+
+  /* Section call-to */
+  /* 1 cột và 2 hàng */
+  .call-to {
+    grid-template-columns: 1fr;
+  }
+  .call-to-section-img-box {
+    grid-row: 1;
+    height: 32rem;
+  }
+  .call-to-section-text-box {
+    padding: 3.2rem;
+  }
+  .btn,
+  .btn:link,
+  .btn:visited {
+    padding: 2.4rem 1.6rem;
+  }
+}

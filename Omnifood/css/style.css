@@ -19,6 +19,23 @@ Letter spacing:
 -----------------How-to-work
 + When we build section-how-to-work, about the image, we need to add 2 round behind the image, so it could be better.
  */
+/* Mobile nav */
+.btn-mobile-nav{
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: none;
+}
+.icon-mobile-nav{
+  height: 4.8rem;
+  width: 4.8rem;
+  stroke: currentColor;
+}
+
+/* Chọn icon-mobile-nav có name là close-outline */
+.icon-mobile-nav[name="list-outline"]{
+    display: none;
+}
 
 /* HEADER */
 .main-header {
@@ -55,7 +72,7 @@ Letter spacing:
   color: #333;
   font-weight: 500;
   /* Add transition when we hover it */
-  transition: all 1s;
+  transition: all 0.4s;
 }
 
 .main-nav-link:hover,
@@ -65,37 +82,54 @@ Letter spacing:
 
 .btn-nav:link,
 .btn-nav:visited {
+  background-color: #e67e22;
   padding: 1.2rem 2.4rem;
   color: #fff;
 }
 
-/* HERO */
+.btn-nav:hover,
+.btn:active {
+  background-color: #cf711f;
+}
 
+/* Sticky navigation */
+.sticky .main-header{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10000;
+  height: 8rem;
+  box-shadow: 0 1.2rem 3.2rem  rgba(0, 0, 0, 0.1);
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.sticky .section-hero{
+  margin-top: 8rem;
+}
+/* HERO */
 .section-hero {
   background-color: #fdf2e9;
   padding: 4.8rem 0 9.6rem 0;
 }
+
 .hero {
   max-width: 130rem;
   margin: 0 auto;
-  display: flex;
   align-items: center;
   padding: 0 3.2rem;
   gap: 9.6rem;
 }
-.hero-text {
+.hero-text-box {
   flex: 1 1 100%;
 }
 
 .hero-description {
   font-size: 2rem;
   margin-bottom: 4.8rem;
-  line-height: 1.6;
+  line-height: 2;
 }
-.hero-btns {
-  display: flex;
-  align-items: flex-start;
-}
+
 .delivered-meals {
   margin-top: 8rem;
   display: flex;
@@ -117,44 +151,33 @@ Letter spacing:
 }
 .delivered-text {
   font-size: 1.8rem;
+  line-height: 1.8;
   font-weight: 600;
 }
 .delivered-text span {
   color: #cf711f;
   font-weight: 700;
 }
-.hero-img {
+.hero-img-box {
   flex: 1 1 100%;
 }
-.hero-img img {
+.hero-img {
   width: 100%;
-}
-.btn,
-.btn:link,
-.btn:visited {
-  border: none;
-  background-color: #e67e22;
-  display: inline-block;
-  border-radius: 9px;
-  font-size: 2rem;
-  font-weight: 500;
-  text-decoration: none;
-  cursor: pointer;
-  /* put transition in original button */
-  transition: all 1s;
-  font-family: inherit;
-}
-.btn:hover,
-.btn:active {
-  background-color: #cf711f;
 }
 
 .btn-eating-well:link,
 .btn-eating-well:visited {
+  background-color: #e67e22;
   padding: 1.6rem 3.2rem;
   color: #fff;
   font-size: 2rem;
+  line-height: 2;
   font-weight: 600;
+}
+
+.btn-eating-well:hover,
+.btn-eating-well:active {
+  background-color: #cf711f;
 }
 
 .btn-more:link,
@@ -163,6 +186,7 @@ Letter spacing:
   color: #555;
   padding: 1.6rem 3.2rem;
   font-size: 2rem;
+  line-height: 2;
   font-weight: 600;
 }
 .btn-more:hover,
@@ -178,6 +202,7 @@ Letter spacing:
 }
 .heading-featured-in {
   font-size: 1.4rem;
+  line-height: 1.4;
   font-weight: 500;
   letter-spacing: 0.75px;
   text-align: center;
@@ -259,7 +284,7 @@ Letter spacing:
   border-radius: 12px;
   /* What overflows this container should be hidden */
   overflow: hidden;
-  transition: all 1s;
+  transition: all 0.4s;
 }
 .meal:hover {
   transform: translateY(-1.5rem);
@@ -275,6 +300,7 @@ Letter spacing:
   padding: 0.4rem 0.8rem;
   display: inline-block;
   font-size: 1.2rem;
+  line-height: 1.2;
   text-transform: uppercase;
   color: #333;
   border-radius: 100px;
@@ -296,6 +322,7 @@ Letter spacing:
 }
 .meal-title {
   font-size: 2.4rem;
+  line-height: 2.4;
   font-weight: 600;
   margin-bottom: 3.2rem;
   color: #333;
@@ -315,6 +342,7 @@ Letter spacing:
   align-items: center;
   gap: 1.6rem;
   font-size: 1.8rem;
+  line-height: 1.8;
 }
 
 .diets {
@@ -322,6 +350,7 @@ Letter spacing:
 
 .see-recipes {
   font-size: 1.8rem;
+  line-height: 1.8;
 }
 
 /* Testimonials */
@@ -353,6 +382,7 @@ Letter spacing:
 }
 .testimonial-name {
   font-size: 1.6rem;
+  line-height: 1.6;
   color: #6f6f6f;
 }
 .gallery {
@@ -367,7 +397,7 @@ Letter spacing:
 .gallery-item img {
   width: 100%;
   height: 100%;
-  transition: all 1s;
+  transition: all 0.4s;
 }
 .gallery img:hover {
   transform: scale(1.1);
@@ -382,14 +412,12 @@ Letter spacing:
   border: 3px solid #fdf2e9;
   justify-self: end;
   padding: 4.5rem;
-
 }
 .pricing-plan--complete {
   background-color: #fdf2e9;
   overflow: hidden;
   position: relative;
   padding: 4.8rem;
-
 }
 .pricing-plan--complete::after {
   position: absolute;
@@ -397,6 +425,7 @@ Letter spacing:
   background-color: #ffd43b;
   color: #333;
   font-size: 1.4rem;
+  line-height: 1.4;
   font-weight: 700;
   text-transform: uppercase;
   padding: 0.8rem 8rem;
@@ -412,6 +441,7 @@ Letter spacing:
   text-transform: uppercase;
   color: #cf711f;
   font-size: 2rem;
+  line-height: 2;
   font-weight: 600;
   margin-bottom: 3.2rem;
   letter-spacing: 0.75;
@@ -477,8 +507,9 @@ Letter spacing:
   background-image: linear-gradient(to right bottom, #eb984e, #e67e22);
   box-shadow: 0 2.4rem 4.8rem rgb(0 0 0 / 15%);
 }
-.section-call-to .heading-secd {
+.call-to .heading-secd {
   margin-bottom: 3.2rem;
+  color: inherit;
 }
 .call-to-section-text-box {
   padding: 4.8rem 6.4rem 6.4rem 6.4rem;
@@ -495,23 +526,27 @@ Letter spacing:
   column-gap: 3.2rem;
   row-gap: 2.4rem;
 }
-.call-to-section-form {
-}
-.call-to-section-form label {
+
+.call-to-section-forms label {
   font-size: 1.6rem;
   margin-bottom: 1.2rem;
   font-weight: 500;
   display: block;
 }
-.call-to-section-form input,
-.call-to-section-form select {
+.call-to-section-forms input,
+.call-to-section-forms select {
   font-size: 1.8rem;
   padding: 1.2rem;
   border: none;
   background-color: #fdf2e9;
   border-radius: 11px;
   font-family: inherit;
+  color: inherit;
   width: 100%;
+  box-shadow: 0 1px 10px rgb(0, 0, 0, 0.15);
+}
+.call-to-section-forms input::placeholder {
+  color: #aaa;
 }
 .btn-form {
   background-color: #45260a;
@@ -534,7 +569,10 @@ Letter spacing:
   background-position: center;
   width: 100%;
 }
-
+.section-call-to *:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.8rem rgb(253, 242, 233, 0.5);
+}
 /* Footer */
 .footer {
   border-top: 1px solid #eee;
@@ -558,12 +596,13 @@ Letter spacing:
   color: rgb(118, 118, 118);
   width: 2.4rem;
   height: 2.4rem;
-  transition: all 1s;
+  transition: all 0.4s;
 }
 .icon-footer:hover {
   color: #555;
 }
 .copyright {
+  color: #767676;
   font-size: 1.4rem;
   line-height: 1.6;
   margin-top: auto;
@@ -577,10 +616,16 @@ Letter spacing:
   margin-bottom: 2.4rem;
 }
 
-.footer a {
+.footer-link:visited,
+.footer-link:link {
   font-size: 1.6rem;
   text-decoration: none;
   color: #767676;
+  transition: all 0.4s;
+}
+.footer-link:hover,
+.footer-link:active {
+  color: #555;
 }
 
 .footer-heading {
